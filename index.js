@@ -33,17 +33,11 @@ app.get("/", (req, res) => {
     res.render("home", { tasks });
 });
 
-app.get("/:id", (req, res) => {
+app.get("/lol/:id", (req, res) => {
     const id = parseInt(req.params.id);
-    const taskIndex = tasks.findIndex((c) => c.id === id);
+    const taskIndex = tasks.find((c) => c.id === id);
 
-    if (tasks[taskIndex].done === true) {
-        tasks[taskIndex].done = false;
-    } else {
-        tasks[taskIndex].done = true;
-    }
-
-    // console.log(tasks[id - 1]);
+    taskIndex.done = !taskIndex.done;
 
     res.redirect("/");
 });
