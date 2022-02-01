@@ -2,7 +2,7 @@
     <div id="headwrap">
         <h2>To do List</h2>
         <input class="input" placeholder="Write New..." type="text" id="inp" />
-        <button id="button">Add</button>
+        <button id="button" type="submit"><a href="/">Add</a></button>
     </div>
 </header>
 <main id="mainwrap">
@@ -14,12 +14,26 @@
         <h4>To do</h4>
         <ul id="myList" class="list">
             {{#each tasks}}
-                <li>{{disc}}</li>
+                {{#unless done}}
+                    <li class="task">
+                        <a href="/{{id}}">{{name}}</a><a
+                            href="/{{id}}/del"
+                        >X</a></li>
+                {{/unless}}
             {{/each}}
         </ul>
     </div>
     <div class="listWrap">
         <h4>Done</h4>
-        <ul id="doneList" class="list"></ul>
+        <ul id="doneList" class="list">
+            {{#each tasks}}
+                {{#if done}}
+                    <li class="task">
+                        <a href="/{{id}}">{{name}}</a><a
+                            href="/{{id}}/del"
+                        >X</a></li>
+                {{/if}}
+            {{/each}}
+        </ul>
     </div>
 </main>

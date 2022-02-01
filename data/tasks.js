@@ -1,10 +1,8 @@
-let date = new Date().toISOString();
-
 const tasks = [
-    { id: 1, created: date, disc: "Äta", done: false },
-    { id: 2, created: date, disc: "Sova", done: false },
-    { id: 3, created: date, disc: "Koda", done: false },
-    { id: 4, created: date, disc: "Springa", done: false },
+    { id: 1, name: "Äta", done: false },
+    { id: 2, name: "Sova", done: false },
+    { id: 3, name: "Koda", done: true },
+    { id: 4, name: "Springa", done: false },
 ];
 
-exports.module = tasks;
+module.exports = tasks;

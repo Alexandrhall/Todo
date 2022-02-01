@@ -83,27 +83,30 @@ button:hover {
 #mainwrap div h4 {
     width: 100px;
     margin: 0 auto;
+    font-size: 1.5rem;
+    font-weight: normal;
+    font-family: sans-serif;
 }
-#mainwrap .list {
+#mainwrap .listWrap .list {
     margin: 0 auto;
     padding: 10px 0px 10px 0px;
     width: 75%;
     flex-direction: column;
 }
-#mainwrap .list #sort {
+#mainwrap .listWrap .list #sort {
     width: 120px;
     margin-bottom: 10px;
     background-color: rgba(169, 169, 169, 0);
     border-style: none;
 }
-#mainwrap button {
+#mainwrap .butWrap button {
     height: 25px;
     width: 100px;
     border-style: none;
     border-radius: 10px;
     box-shadow: 1px 1px 1px rgba(169, 169, 169, 0.2) l;
 }
-#mainwrap .list li {
+#mainwrap .listWrap .list li {
     list-style: none;
     border-radius: 10px;
     padding: 2px;
@@ -114,17 +117,21 @@ button:hover {
     display: flex;
     justify-content: space-between;
 }
-#mainwrap .list li .close {
+#mainwrap .listWrap li .close {
     float: right;
     font: 1.2rem;
 }
-#mainwrap .list li .close:hover {
+#mainwrap .listWrap li .close:hover {
     background-color: salmon;
     border-radius: 30%;
 }
-#mainwrap .list li p {
+#mainwrap .listWrap li p {
     flex-grow: 1;
     margin: 0;
+}
+#mainwrap .listWrap li a {
+    text-decoration: none;
+    color: darkorange;
 }
 @media screen and (min-width: 768px) {
     #mainwrap {
