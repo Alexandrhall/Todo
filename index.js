@@ -18,6 +18,17 @@ app.set("view engine", "hbs");
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 
+function getNewId(list) {
+    let maxId = 0;
+    for (const line of list) {
+        if (line.id > maxId) {
+            maxId = line.id;
+        }
+    }
+
+    return maxId + 1;
+}
+
 app.get("/", (req, res) => {
     console.log(req.body.inp);
     res.render("home", { tasks });

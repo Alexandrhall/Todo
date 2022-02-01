@@ -18,6 +18,7 @@
                     <li class="task">
                         <a href="/{{id}}">{{name}}</a><a
                             href="/{{id}}/del"
+                            class="close"
                         >X</a></li>
                 {{/unless}}
             {{/each}}
@@ -28,9 +29,10 @@
         <ul id="doneList" class="list">
             {{#each tasks}}
                 {{#if done}}
-                    <li class="task">
+                    <li class="checked">
                         <a href="/{{id}}">{{name}}</a><a
                             href="/{{id}}/del"
+                            class="close"
                         >X</a></li>
                 {{/if}}
             {{/each}}
