@@ -30,7 +30,6 @@ function getNewId(list) {
 }
 
 app.get("/", (req, res) => {
-    console.log(req.body.inp);
     res.render("home", { tasks });
 });
 
