@@ -1,5 +1,6 @@
 const express = require("express");
 const exphbs = require("express-handlebars");
+const tasks = require("./data/tasks.js");
 
 const app = express();
 
@@ -17,7 +18,7 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
-    res.render("home");
+    res.render("home", { tasks });
 });
 
 app.listen(3000, () => {
