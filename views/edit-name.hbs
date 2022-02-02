@@ -25,8 +25,17 @@
             {{/if}}
         {{/each}}
     </ul>
-    <form method="POST" action="http://localhost:3000/{{taskIndex.id}}/edit">
-        <input type="text" name="name" placeholder="Name" value="{{name}}" />
-        <button type="submit" value="Save"></button>
-    </form>
 </div>
+<form
+    method="POST"
+    action="http://localhost:3000/{{taskIndex.id}}/edit"
+    class="editform"
+>
+    <input
+        type="text"
+        name="name"
+        placeholder="Change description"
+        value="{{name}}"
+    />
+    <button type="submit" value="Save" id="saveBut">Save</button>
+</form>

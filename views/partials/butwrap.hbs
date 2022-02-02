@@ -1,6 +1,6 @@
 <div class="butWrap">
-        <form action="/sort" method="GET">
-        <label id="show">Sort:
+        <form action="/sort" method="GET" class="sorter">
+        <label id="show">Sort: </label>
             <select name="sortList">   
                     <option value="/sort/dateold">Old first</option>
                     <option value="/sort/datefirst">New first</option>
@@ -8,8 +8,8 @@
             </select>
                     <input value="Submit" type="submit"></button>
         </form>
-        <form action="/show" method="GET">
-        <label id="show">Show:
+        <form action="/show" method="GET" class="shower">
+        <label id="show">Show: </label>
             <select name="showDone">   
                     <option value="/">All</option>
                     <option value="/show/done">Done</option>
@@ -17,4 +17,4 @@
             </select>
                     <input value="Submit" type="submit"></button>
         </form>
-    </div>
+</div>

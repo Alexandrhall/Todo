@@ -22,6 +22,12 @@ button:hover {
   transition: all 0.2s;
 }
 
+.butWrap form input:hover {
+  background-color: chartreuse;
+  color: black;
+  transition: all 0.2s;
+}
+
 #headwrap {
   background-color: rgba(169, 169, 169, 0.2);
   width: 70vw;
@@ -30,13 +36,15 @@ button:hover {
   margin: 10px;
   display: flex;
   flex-wrap: wrap;
-  padding: 5px;
   row-gap: 30px;
 }
-#headwrap h2 {
+#headwrap a {
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.2rem;
   width: 100%;
+  height: 35px;
+  text-decoration: none;
+  color: darkorange;
   margin: 0 auto;
 }
 #headwrap #inp {
@@ -57,8 +65,6 @@ button:hover {
   box-shadow: 1px 1px 1px rgba(169, 169, 169, 0.2);
   height: 35px;
   width: 20%;
-  margin-left: 5px;
-  margin-top: 2px;
   max-width: 80px;
 }
 
@@ -75,6 +81,35 @@ button:hover {
   flex-grow: 1;
   margin: 15px;
 }
+#mainwrap .butWrap form {
+  display: flex;
+  gap: 15px;
+}
+#mainwrap .butWrap form label {
+  width: 45px;
+}
+#mainwrap .butWrap form input {
+  height: 25px;
+  width: 80px;
+  border-style: none;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px rgba(169, 169, 169, 0.2);
+  background-color: black;
+  color: darkorange;
+  cursor: pointer;
+}
+#mainwrap .butWrap form input:hover {
+  background-color: chartreuse;
+  color: black;
+  transition: all 0.2s;
+}
+#mainwrap .butWrap form select {
+  background-color: black;
+  color: darkorange;
+  width: 100px;
+  height: 25px;
+  border-radius: 5px;
+}
 #mainwrap div {
   width: 50%;
   margin: 0 auto;
@@ -84,8 +119,6 @@ button:hover {
   margin: 0 auto;
 }
 #mainwrap .list {
-  margin: 0 auto;
-  padding: 10px 0px 10px 0px;
   width: 75%;
   flex-direction: column;
 }
@@ -95,7 +128,7 @@ button:hover {
   background-color: rgba(169, 169, 169, 0);
   border-style: none;
 }
-#mainwrap .list li {
+#mainwrap .list .task {
   list-style: none;
   border-radius: 10px;
   padding: 2px;
@@ -105,16 +138,17 @@ button:hover {
   transition: all 0.2s;
   display: flex;
   justify-content: space-between;
+  margin: 0 auto;
 }
-#mainwrap .list li .close {
+#mainwrap .list .task .close {
   float: right;
   font-size: 1.2rem;
 }
-#mainwrap .list li .close:hover {
+#mainwrap .list .task .close:hover {
   background-color: salmon;
   border-radius: 30%;
 }
-#mainwrap .list li .linkname {
+#mainwrap .list .task .linkname {
   flex-grow: 1;
   margin: 0;
 }
@@ -140,6 +174,39 @@ button:hover {
 
 button {
   cursor: pointer;
+}
+
+.editform {
+  display: flex;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  gap: 5px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.editform #saveBut {
+  color: darkorange;
+}
+.editform input {
+  height: 35px;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  border-style: none;
+  background-color: black;
+  color: darkorange;
+}
+
+.headform {
+  margin-left: 10px;
+  display: flex;
+}
+.headform input {
+  text-align: center;
+  height: 35px;
+}
+.headform button {
+  margin-top: 2px;
+  height: 35px;
 }
 
 @media screen and (min-width: 768px) {

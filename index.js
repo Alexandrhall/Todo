@@ -70,17 +70,17 @@ app.post("/", (req, res) => {
 
     tasks.push(newTask);
 
-    console.log(req.body.name);
+    // console.log(req.body.name);
     res.redirect("/");
 });
 
 app.get("/show", (req, res) => {
-    console.log(req.query);
+    // console.log(req.query);
     res.redirect(req.query.showDone);
 });
 
 app.get("/show/done", (req, res) => {
-    console.log(req.query);
+    // console.log(req.query);
     res.render("done-list", { tasks });
 });
 
