@@ -1,4 +1,4 @@
-let dateNow = new Date();
+let dateNow = JSON.stringify(new Date());
 
 const tasks = [
     { id: 1, name: "Äta", date: dateNow, done: false },

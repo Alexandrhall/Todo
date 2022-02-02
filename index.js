@@ -29,6 +29,13 @@ function getNewId(list) {
 }
 
 app.get("/", (req, res) => {
+    // let string = JSON.stringify(tasks);
+
+    // string = JSON.parse("[" + string + "]");
+
+    // console.log(string);
+    // console.log(tasks);
+
     res.render("home", { tasks });
 });
 
@@ -52,7 +59,7 @@ app.get("/:id/del", (req, res) => {
 
 app.post("/", (req, res) => {
     const id = getNewId(tasks);
-    let dateNow = new Date();
+    let dateNow = JSON.stringify(new Date());
 
     const newTask = {
         id: id,
@@ -127,6 +134,22 @@ app.get("/sort/datefirst", (req, res) => {
         }
         return 0;
     });
+    res.redirect("/");
+});
+
+app.get("/:id/edit", (req, res) => {
+    const id = parseInt(req.params.id);
+    const taskIndex = tasks.find((c) => c.id === id);
+
+    res.render("edit-name", { tasks, taskIndex });
+});
+
+app.post("/:id/edit", (req, res) => {
+    const id = parseInt(req.params.id);
+    const taskIndex = tasks.find((c) => c.id === id);
+
+    taskIndex.name = req.body.name;
+
     res.redirect("/");
 });
 

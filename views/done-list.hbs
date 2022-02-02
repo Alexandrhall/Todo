@@ -8,11 +8,11 @@
     <ul id="doneList" class="list">
         {{#each tasks}}
             {{#if done}}
-                <li class="checked">
-                    <a href="/lol/{{id}}">{{name}}</a><a
-                        href="/{{id}}/del"
-                        class="close"
-                    >X</a></li>
+                <li class="task">
+                    <a href="/lol/{{id}}" class="linkname">{{name}}</a>
+                    <a href="/{{id}}/edit" class="close">E</a>
+                    <a href="/{{id}}/del" class="close">X</a>
+                </li>
             {{/if}}
         {{/each}}
     </ul>

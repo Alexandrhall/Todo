@@ -121,7 +121,7 @@ button:hover {
                 background-color: salmon;
                 border-radius: 30%;
             }
-            p {
+            .linkname {
                 flex-grow: 1;
                 margin: 0;
             }
@@ -130,10 +130,6 @@ button:hover {
             background-color: wheat;
             border-radius: 10px;
         }
-        li.checked {
-            text-decoration: line-through;
-            align-self: flex-end;
-        }
     }
     button {
         height: 35px;
@@ -141,6 +137,9 @@ button:hover {
         border-style: none;
         border-radius: 10px;
         box-shadow: 1px 1px 1px $backcol;
+    }
+    .isdone {
+        text-decoration: line-through;
     }
 }
 

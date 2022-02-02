@@ -4,10 +4,10 @@
         {{#each tasks}}
             {{#unless done}}
                 <li class="task">
-                    <a href="/lol/{{id}}">{{name}}</a><a
-                        href="/{{id}}/del"
-                        class="close"
-                    >X</a></li>
+                    <a href="/lol/{{id}}" class="linkname">{{name}}</a>
+                    <a href="/{{id}}/edit" class="close">E</a>
+                    <a href="/{{id}}/del" class="close">X</a>
+                </li>
             {{/unless}}
         {{/each}}
     </ul>
