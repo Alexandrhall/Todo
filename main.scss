@@ -19,12 +19,7 @@ button {
 }
 
 button:hover {
-    background-color: chartreuse;
-    color: black;
-    transition: all 0.2s;
-}
-.butWrap form input:hover {
-    background-color: chartreuse;
+    background-color: wheat;
     color: black;
     transition: all 0.2s;
 }
@@ -55,7 +50,7 @@ button:hover {
         background-color: black;
         color: darkorange;
         width: 40%;
-        height: 35px;
+        height: 30px;
         max-width: 225px;
         min-width: 135px;
     }
@@ -63,7 +58,7 @@ button:hover {
         border-style: none;
         border-radius: 10px;
         box-shadow: 1px 1px 1px $backcol;
-        height: 35px;
+        height: 30px;
         width: 20%;
         max-width: 80px;
     }
@@ -87,6 +82,9 @@ button:hover {
         }
         form label {
             width: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         form input {
             height: 25px;
@@ -99,7 +97,7 @@ button:hover {
             cursor: pointer;
         }
         form input:hover {
-            background-color: chartreuse;
+            background-color: wheat;
             color: black;
             transition: all 0.2s;
         }
@@ -199,12 +197,14 @@ button {
         border-style: none;
         background-color: black;
         color: darkorange;
+        text-align: center;
     }
 }
 
 .headform {
     margin-left: 10px;
     display: flex;
+    gap: 5px;
     input {
         text-align: center;
         height: 35px;

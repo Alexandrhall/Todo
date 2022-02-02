@@ -61,26 +61,25 @@ app.post("/", (req, res) => {
     const id = getNewId(tasks);
     let dateNow = JSON.stringify(new Date());
 
-    const newTask = {
-        id: id,
-        name: req.body.name,
-        date: dateNow,
-        done: false,
-    };
+    if (req.body.name != "") {
+        const newTask = {
+            id: id,
+            name: req.body.name,
+            date: dateNow,
+            done: false,
+        };
 
-    tasks.push(newTask);
+        tasks.push(newTask);
+    }
 
-    // console.log(req.body.name);
     res.redirect("/");
 });
 
 app.get("/show", (req, res) => {
-    // console.log(req.query);
     res.redirect(req.query.showDone);
 });
 
 app.get("/show/done", (req, res) => {
-    // console.log(req.query);
     res.render("done-list", { tasks });
 });
 
@@ -148,7 +147,9 @@ app.post("/:id/edit", (req, res) => {
     const id = parseInt(req.params.id);
     const taskIndex = tasks.find((c) => c.id === id);
 
-    taskIndex.name = req.body.name;
+    if (req.body.name != "") {
+        taskIndex.name = req.body.name;
+    }
 
     res.redirect("/");
 });
