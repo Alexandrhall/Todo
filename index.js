@@ -1,7 +1,6 @@
 const express = require("express");
 const exphbs = require("express-handlebars");
 const tasks = require("./data/tasks.js");
-const fs = require("fs");
 
 const app = express();
 
@@ -68,14 +67,9 @@ app.post("/", (req, res) => {
     res.redirect("/");
 });
 
-// app.post("/show", (req, res) => {
-//     console.log(req.query);
-//     res.redirect("/");
-// });
-
 app.get("/show", (req, res) => {
-    console.log(req.query.ifDone);
-    res.redirect(req.query.ifDone);
+    console.log(req.query);
+    res.redirect(req.query.showDone);
 });
 
 app.get("/show/done", (req, res) => {
@@ -85,6 +79,55 @@ app.get("/show/done", (req, res) => {
 
 app.get("/show/undone", (req, res) => {
     res.render("undone-list", { tasks });
+});
+
+app.get("/sort", (req, res) => {
+    res.redirect(req.query.sortList);
+});
+
+app.get("/sort/name", (req, res) => {
+    tasks.sort(function (a, b) {
+        let nameA = a.name.toUpperCase();
+        let nameB = b.name.toUpperCase();
+        if (nameA < nameB) {
+            return -1;
+        }
+        if (nameA > nameB) {
+            return 1;
+        }
+        return 0;
+    });
+    res.redirect("/");
+});
+
+app.get("/sort/dateold", (req, res) => {
+    tasks.sort(function (a, b) {
+        let nameA = a.date;
+        let nameB = b.date;
+        if (nameA < nameB) {
+            return -1;
+        }
+        if (nameA > nameB) {
+            return 1;
+        }
+        return 0;
+    });
+    res.redirect("/");
+});
+
+app.get("/sort/datefirst", (req, res) => {
+    tasks.sort(function (a, b) {
+        let nameA = a.date;
+        let nameB = b.date;
+        if (nameA > nameB) {
+            return -1;
+        }
+        if (nameA < nameB) {
+            return 1;
+        }
+        return 0;
+    });
+    res.redirect("/");
 });
 
 app.listen(3000, () => {
