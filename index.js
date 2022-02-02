@@ -46,11 +46,45 @@ app.get("/:id/del", (req, res) => {
     const id = parseInt(req.params.id);
     const taskIndex = tasks.findIndex((c) => c.id === id);
 
-    tasks.splice(tasks[taskIndex], 1);
-
-    // console.log(tasks);
+    tasks.splice(taskIndex, 1);
 
     res.redirect("/");
+});
+
+app.post("/", (req, res) => {
+    const id = getNewId(tasks);
+    let dateNow = new Date();
+
+    const newTask = {
+        id: id,
+        name: req.body.name,
+        date: dateNow,
+        done: false,
+    };
+
+    tasks.push(newTask);
+
+    console.log(req.body.name);
+    res.redirect("/");
+});
+
+// app.post("/show", (req, res) => {
+//     console.log(req.query);
+//     res.redirect("/");
+// });
+
+app.get("/show", (req, res) => {
+    console.log(req.query.ifDone);
+    res.redirect(req.query.ifDone);
+});
+
+app.get("/show/done", (req, res) => {
+    console.log(req.query);
+    res.render("done-list", { tasks });
+});
+
+app.get("/show/undone", (req, res) => {
+    res.render("undone-list", { tasks });
 });
 
 app.listen(3000, () => {

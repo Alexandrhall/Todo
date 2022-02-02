@@ -17,13 +17,13 @@
     <div class="butWrap">
         <button id="sort">Sort Name</button>
         <button id="dateSort">Sort Date</button>
-        <form action="/show" method="GET">
-        <label id="show">Show:
-            <select name="ifDone">   
-                    <option value="/show/done">Done</option>
-                    <option value="/show/undone">Undone</option>
-            </select>
+        <form action="/show/done" method="GET">
+        <label name="Show" id="Show">Show:
+            <select>   
+                    <option value="http://localhost:3000/show/done">Done</option>
                     <input value="Submit" type="submit"></button>
+            </select>
+        </label>
         </form>
     </div>
     <div class="listWrap">
@@ -43,15 +43,6 @@
     <div class="listWrap">
         <h4>Done</h4>
         <ul id="doneList" class="list">
-            {{#each tasks}}
-                {{#if done}}
-                    <li class="checked">
-                        <a href="/lol/{{id}}">{{name}}</a><a
-                            href="/{{id}}/del"
-                            class="close"
-                        >X</a></li>
-                {{/if}}
-            {{/each}}
-        </ul>
+           </ul>
     </div>
 </main>
