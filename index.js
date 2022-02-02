@@ -61,11 +61,11 @@ app.post("/", (req, res) => {
     const id = getNewId(tasks);
     let dateNow = JSON.stringify(new Date());
 
-    if (req.body.name != "") {
+    if (req.body.description != "") {
         const newTask = {
             id: id,
-            name: req.body.name,
-            date: dateNow,
+            created: dateNow,
+            description: req.body.description,
             done: false,
         };
 
@@ -93,8 +93,8 @@ app.get("/sort", (req, res) => {
 
 app.get("/sort/name", (req, res) => {
     tasks.sort(function (a, b) {
-        let nameA = a.name.toUpperCase();
-        let nameB = b.name.toUpperCase();
+        let nameA = a.description.toUpperCase();
+        let nameB = b.description.toUpperCase();
         if (nameA < nameB) {
             return -1;
         }
@@ -108,8 +108,8 @@ app.get("/sort/name", (req, res) => {
 
 app.get("/sort/dateold", (req, res) => {
     tasks.sort(function (a, b) {
-        let nameA = a.date;
-        let nameB = b.date;
+        let nameA = a.created;
+        let nameB = b.created;
         if (nameA < nameB) {
             return -1;
         }
@@ -123,8 +123,8 @@ app.get("/sort/dateold", (req, res) => {
 
 app.get("/sort/datefirst", (req, res) => {
     tasks.sort(function (a, b) {
-        let nameA = a.date;
-        let nameB = b.date;
+        let nameA = a.created;
+        let nameB = b.created;
         if (nameA > nameB) {
             return -1;
         }
@@ -147,8 +147,10 @@ app.post("/:id/edit", (req, res) => {
     const id = parseInt(req.params.id);
     const taskIndex = tasks.find((c) => c.id === id);
 
-    if (req.body.name != "") {
-        taskIndex.name = req.body.name;
+    console.log(req.body.description);
+
+    if (req.body.description != "") {
+        taskIndex.description = req.body.description;
     }
 
     res.redirect("/");

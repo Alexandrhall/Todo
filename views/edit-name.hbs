@@ -4,7 +4,7 @@
         {{#each tasks}}
             {{#unless done}}
                 <li class="task">
-                    <a href="/lol/{{id}}" class="linkname">{{name}}</a>
+                    <a href="/lol/{{id}}" class="linkname">{{description}}</a>
                     <a href="/{{id}}/edit" class="close">E</a>
                     <a href="/{{id}}/del" class="close">X</a>
                 </li>
@@ -18,7 +18,10 @@
         {{#each tasks}}
             {{#if done}}
                 <li class="task">
-                    <a href="/lol/{{id}}" class="linkname isdone">{{name}}</a>
+                    <a
+                        href="/lol/{{id}}"
+                        class="linkname isdone"
+                    >{{description}}</a>
                     <a href="/{{id}}/edit" class="close">E</a>
                     <a href="/{{id}}/del" class="close">X</a>
                 </li>
@@ -33,9 +36,9 @@
 >
     <input
         type="text"
-        name="name"
+        name="description"
         placeholder="Change description"
-        value="{{name}}"
+        value="{{description}}"
     />
     <button type="submit" value="Save" id="saveBut">Save</button>
 </form>
