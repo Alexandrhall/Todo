@@ -29,13 +29,6 @@ function getNewId(list) {
 }
 
 app.get("/", (req, res) => {
-    // let string = JSON.stringify(tasks);
-
-    // string = JSON.parse("[" + string + "]");
-
-    // console.log(string);
-    // console.log(tasks);
-
     res.render("home", { tasks });
 });
 
