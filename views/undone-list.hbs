@@ -4,7 +4,10 @@
         {{#each tasks}}
             {{#unless done}}
                 <li class="task">
-                    <a href="/lol/{{id}}" class="linkname">{{description}}</a>
+                    <a
+                        href="/checked/{{id}}"
+                        class="linkname"
+                    >{{description}}</a>
                     <a href="/{{id}}/edit" class="close">E</a>
                     <a href="/{{id}}/del" class="close">X</a>
                 </li>

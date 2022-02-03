@@ -39,7 +39,7 @@ app.get("/", (req, res) => {
     res.render("home", { tasks });
 });
 
-app.get("/lol/:id", (req, res) => {
+app.get("/checked/:id", (req, res) => {
     const id = parseInt(req.params.id);
     const taskIndex = tasks.find((c) => c.id === id);
 
